@@ -106,7 +106,7 @@ def train_reinforce(
         log_probs = []
         rewards = []
 
-        while not done and step < n_steps:
+        while not done and step < n_steps: #episode loop
             if step % eval_interval == 0:
                 mean_return = evaluate_policy(
                     policy,
