@@ -58,19 +58,19 @@ tail -f logs/<job_id>.out
 
 ## Repository Structure
 
+```text
 RL_A3/
-├── src/                # Algorithm implementations
+├── src/
 │   ├── networks.py
 │   ├── utils.py
 │   ├── reinforce.py
 │   ├── actor_critic.py
 │   ├── a2c.py
 │   └── train.py
-├── results/            # Generated plots
+├── results/
 │   └── comparison.png
-├── docs/               # Report (PDF)
 ├── BaselineDataCartPole.csv
-├── run_experiment.sh   # SLURM job script
+├── run_experiment.sh
 ├── requirements.txt
 └── README.md
 
