@@ -68,7 +68,11 @@ def evaluate_policy(policy_network, eval_env, n_episodes=5):
         total_reward = 0
 
         while not done:
-            action, _ = select_action(policy_network, state)
+            #action, _ = select_action(policy_network, state)
+            state_tensor = torch.FloatTensor(state).unsqueeze(0)
+            with torch.no_grad():
+                probs = policy_network(state_tensor)
+            action = torch.argmax(probs, dim=-1).item()
             state, reward, terminated, truncated, _ = eval_env.step(action)
             total_reward += reward
             done = terminated or truncated

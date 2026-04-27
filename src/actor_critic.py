@@ -16,8 +16,8 @@ def train_actor_critic(
         n_steps=100000,
         eval_interval=2500,
         n_eval_episodes=5,
-        actor_lr=1e-3,
-        critic_lr=1e-3,
+        actor_lr=1e-4,
+        critic_lr=1e-4,
         gamma=0.99,
         hidden_size=64):
     """
